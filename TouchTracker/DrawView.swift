@@ -46,8 +46,10 @@ class DrawView: UIView {
         for line in finishedLines {
             stroke(line)
         }
-        currentLineColor.setStroke()
+        // currentLineColor.setStroke()
         for (_, line) in currentLines {
+            currentLineColor = getColorByAngle(present: line.end, start: line.begin)
+            currentLineColor.setStroke()
             stroke(line)
         }
     }
@@ -98,6 +100,18 @@ class DrawView: UIView {
         
         currentLines.removeAll()
         setNeedsDisplay()
+    }
+    
+    func getColorByAngle(present a: CGPoint, start b: CGPoint) -> UIColor {
+        let dx = b.x - a.x
+        let dy = b.y - a.y
+        var angle = atan2(-dx, dy) * 180 / 3.14;
+        
+        if angle < 0 {
+            angle = angle * -1
+        }
+        
+        return UIColor(hue: angle, saturation: 1, brightness: 1, alpha: 1)
     }
     
 }
