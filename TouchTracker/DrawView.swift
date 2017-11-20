@@ -105,12 +105,9 @@ class DrawView: UIView {
     func getColorByAngle(present a: CGPoint, start b: CGPoint) -> UIColor {
         let dx = b.x - a.x
         let dy = b.y - a.y
-        var angle = atan2(-dx, dy) * 180 / 3.14;
-        
-        if angle < 0 {
-            angle = angle * -1
-        }
-        
+        let degree = atan2(-dx, dy) * 180 / 3.14;
+        let angle = degree < 0 ? degree * -1 : degree
+
         return UIColor(hue: angle, saturation: 1, brightness: 1, alpha: 1)
     }
     
