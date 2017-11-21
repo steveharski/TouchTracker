@@ -16,6 +16,7 @@
 		25789FA81FC2CB5C0097264D /* TouchTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25789FA71FC2CB5C0097264D /* TouchTrackerUITests.swift */; };
 		25789FB61FC2CC0B0097264D /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25789FB51FC2CC0B0097264D /* Line.swift */; };
 		25789FB81FC2CE040097264D /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25789FB71FC2CE040097264D /* DrawView.swift */; };
+		25F6AD201FC464D9002ABED1 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F6AD1F1FC464D9002ABED1 /* Circle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		25789FA91FC2CB5C0097264D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25789FB51FC2CC0B0097264D /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		25789FB71FC2CE040097264D /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		25F6AD1F1FC464D9002ABED1 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				25789F871FC2CB5C0097264D /* AppDelegate.swift */,
 				25789F891FC2CB5C0097264D /* ViewController.swift */,
 				25789FB71FC2CE040097264D /* DrawView.swift */,
+				25F6AD1F1FC464D9002ABED1 /* Circle.swift */,
 				25789FB51FC2CC0B0097264D /* Line.swift */,
 				25789F8B1FC2CB5C0097264D /* Main.storyboard */,
 				25789F8E1FC2CB5C0097264D /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F6AD201FC464D9002ABED1 /* Circle.swift in Sources */,
 				25789FB61FC2CC0B0097264D /* Line.swift in Sources */,
 				25789F8A1FC2CB5C0097264D /* ViewController.swift in Sources */,
 				25789FB81FC2CE040097264D /* DrawView.swift in Sources */,
