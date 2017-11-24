@@ -21,10 +21,11 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
-    var moveRecognizer: UIPanGestureRecognizer!
-    
     var currentCircle = Circle()
     var finishedCircles = [Circle]()
+    
+    var moveRecognizer: UIPanGestureRecognizer!
+    var longPressRecognizer: UILongPressGestureRecognizer!
     
     override var canBecomeFirstResponder: Bool {
         return true
@@ -129,7 +130,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         tapRecognizer.require(toFail: doubleTapRecognizer)
         addGestureRecognizer(tapRecognizer)
         
-        let longPressRecognizer = UILongPressGestureRecognizer(target: self,
+        longPressRecognizer = UILongPressGestureRecognizer(target: self,
                                                                action: #selector(DrawView.longPress(_:)))
         addGestureRecognizer(longPressRecognizer)
         
@@ -212,6 +213,10 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
     @objc func moveLine(_ gestureRecognizer: UIPanGestureRecognizer) {
         print("Recognized a pan")
         
+        guard longPressRecognizer.state == .changed else {
+            return
+        }
+        
         // If a line is selected...
         if let index = selectedLineIndex {
             // When the pan recognizer changes its position...
@@ -229,6 +234,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
                 
                 // Redraw the screen
                 setNeedsDisplay()
+                print(#function)
             }
         } else {
             // If no line is selected, do not do anything
